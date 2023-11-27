@@ -1,0 +1,35 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  /* font-weight: 400; */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #151515;
+
+
+}
+
+.image-section {
+  background-image: url(./assets/SignUp/HeroImage.png);
+  background-size: 100% 100%;
+}
+
+.hero-text {
+  font-weight: bolder;
+  font-size: 46px;
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
