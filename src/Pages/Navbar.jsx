@@ -12,12 +12,13 @@ import vector7 from '../assets/Dashboard/vector7.svg'
 import vector8 from '../assets/Dashboard/vector8.svg'
 function Navbar() {
   const navItems = [vector1, vector2, vector3, vector4, vector5, vector6, vector7, vector8]
+  const mouseOverText = ['Analytics', 'Supply Chain Track', 'Inventory Management', 'Transaction Management', 'Regulatory Compliance', 'User Management', 'Product Registration', 'Product Verification']
   return (
     <div className='h-screen bg-[#7743DB] w-[5vw]'>
       <nav className='flex flex-col h-full gap-8 relative pt-24 items-center'>
         <div className='flex text-2xl items-center absolute top-4 '> <FaLink /><span className='font-bold font-Cabin'>HC</span></div>
         {navItems.map((item, index) => {
-          return (<button key={index} className='transition ease-in-out delay-150 duration-200 hover:scale-110'><img src={item} alt='navlink' /></button>)
+          return (<button title={mouseOverText[index]} key={index} className='transition ease-in-out delay-150 duration-200 hover:scale-110'><img src={item} alt='navlink' /></button>)
         })}
       </nav>
     </div>
