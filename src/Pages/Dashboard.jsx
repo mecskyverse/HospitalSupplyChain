@@ -13,10 +13,10 @@ function Dashboard() {
           return (
             <DailyOverview currData={data} index={index} />
           )
-        })}</div>
-        <div className='flex '>
-          
-          <span className='border'><Stock /></span>
+        })}
+        </div>
+        <div className='w-full flex justify-around pt-4 gap-2'>
+          <Stock />
           <Calender />
         </div>
       </div>

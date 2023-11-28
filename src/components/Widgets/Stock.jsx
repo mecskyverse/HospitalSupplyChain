@@ -7,9 +7,11 @@ import stockData1 from '../stockData';
 const SAMPLE_CSS = `
     .control-fluid {
         padding: 0px !important;
+        border: none;
     }
     .charts {
         align :center;
+        border: none;
     }`;
 const titlestyle = { fontFamily: "Arial", color: '#ffffff', textOverflow: 'Wrap' };
 const OHLC = () => {
@@ -22,12 +24,12 @@ const OHLC = () => {
     };
 
     return (
-        <div className='bg-[#342f45] '>
-            {/* <style>{SAMPLE_CSS}</style> */}
-            <StockChartComponent primaryXAxis={{ valueType: 'DateTime', majorGridLines: { width: 0 }, majorTickLines: { color: 'transparent' }, crosshairTooltip: { enable: true } }} primaryYAxis={{ labelFormat: 'n0', lineStyle: { width: 0 }, rangePadding: 'None', majorTickLines: { height: 0 } }} chartArea={{ border: { width: 0 } }} tooltip={{ enable: true, shared: true, position: 'Nearest' }} tooltipRender={tooltipRender} crosshair={{ enable: true }} title='Monthly Revenue Progress' titleStyle={titlestyle} >
+        <div className='bg-[#342f45] ' >
+            <style>{SAMPLE_CSS}</style>
+            <StockChartComponent width='700px' height='342px'  primaryXAxis={{ valueType: 'DateTime', majorGridLines: { width: 0 }, majorTickLines: { color: 'transparent' }, crosshairTooltip: { enable: true } }} primaryYAxis={{ labelFormat: 'n0', lineStyle: { width: 0 }, rangePadding: 'None', majorTickLines: { height: 0 } }} chartArea={{ border: { width: 0 } }} tooltip={{ enable: true, shared: true, position: 'Nearest' }} tooltipRender={tooltipRender} crosshair={{ enable: true }} title='Monthly Revenue Progress' titleStyle={titlestyle} theme='MaterialDark'>
                 <Inject services={[DateTime, Tooltip, RangeTooltip, Crosshair, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines, EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export, AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator]} />
                 <StockChartSeriesCollectionDirective>
-                    <StockChartSeriesDirective dataSource={stockData1} xName='x' high='high' low='low' open='open' close='close' type='HiloOpenClose' bearFillColor={'#39D3EC'} bullFillColor={'#9D7FFE'} animation={{ enable: true }} />
+                    <StockChartSeriesDirective dataSource={stockData1} xName='x' high='high' low='low' open='open' close='close' type='HiloOpenClose' bearFillColor={'#9D7FFE'} bullFillColor={'#39D3EC'} animation={{ enable: true }} />
                 </StockChartSeriesCollectionDirective>
             </StockChartComponent>
         </div>
