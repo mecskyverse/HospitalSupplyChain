@@ -2,6 +2,7 @@ import React from 'react'
 import SearchField from '../components/SearchField.jsx'
 import Calender from '../components/Widgets/Calender.jsx'
 import DailyOverview from '../components/Widgets/DailyOverview.jsx'
+import Stock from '../components/Widgets/Stock.jsx'
 function Dashboard() {
   const Dailydata = ['Visitors', 'Customers', 'Orders', 'Shipment']
   return (
@@ -13,7 +14,11 @@ function Dashboard() {
             <DailyOverview currData={data} index={index} />
           )
         })}</div>
-        <Calender />
+        <div className='flex '>
+          
+          <span className='border'><Stock /></span>
+          <Calender />
+        </div>
       </div>
 
     </div>
