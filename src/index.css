@@ -9,8 +9,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #151515;
-
-
 }
 
 .image-section {
@@ -32,4 +30,20 @@
   100% {
     opacity: 1;
   }
+}
+
+
+.calendar-control-section {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* lable styles */
+
+#date_label {
+  margin-top: 20px;
+  display: block;
+  color: rgba(0, 0, 0, 0.58);
+  font-weight: 500;
+  margin-left: 5px;
 }
