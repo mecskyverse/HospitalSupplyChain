@@ -14,7 +14,7 @@ function Navbar() {
   const navItems = [vector1, vector2, vector3, vector4, vector5, vector6, vector7, vector8]
   const mouseOverText = ['Analytics', 'Supply Chain Track', 'Inventory Management', 'Transaction Management', 'Regulatory Compliance', 'User Management', 'Product Registration', 'Product Verification']
   return (
-    <div className='h-screen bg-[#7743DB] w-[5vw]'>
+    <div className='h-screen bg-[#7743DB] w-[5vw] sticky top-0'>
       <nav className='flex flex-col h-full gap-8 relative pt-24 items-center'>
         <div className='flex text-2xl items-center absolute top-4 '> <FaLink /><span className='font-bold font-Cabin'>HC</span></div>
         {navItems.map((item, index) => {
