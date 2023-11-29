@@ -12,6 +12,13 @@ function App() {
       <Route path='/' element={<SignUp />} />
       <Route path='/overview' element={<Layout />}>
         <Route index element={<Dashboard />} />
+        <Route path='supplyChainTrack' element={<Dashboard />} />
+        <Route path='inventoryManagement' element={<Dashboard />} />
+        <Route path='transactionManagement' element={<Dashboard />} />
+        <Route path='regulatoryCompliance' element={<Dashboard />} />
+        <Route path='userManagement' element={<Dashboard />} />
+        <Route path='productRegistration' element={<Dashboard />} />
+        <Route path='productVerification' element={<Dashboard />} />
       </Route>
     </>
   ))
