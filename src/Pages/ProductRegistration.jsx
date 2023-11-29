@@ -10,7 +10,7 @@ const ProductRegistration = () => {
                 <p className='text-sm font-Cabin mb-1 text-white opacity-50'>General details</p>
                 <hr className='w-full' />
                 <div className=" shadow-md rounded">
-                    <div className='flex justify-around'>
+                    <div className='grid grid-cols-2 place-items-center'>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
                                 Product Name
@@ -23,24 +23,82 @@ const ProductRegistration = () => {
                             </label>
                             <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Description' id="email" required />
                         </div>
+
+
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productName">
+                                Batch Number/Serial Number
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Enter Product Name' id="email" required />
+                        </div>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
+                                Product Description
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Description' id="email" required />
+                        </div>
+
+
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productName">
+                                Manufacturing Date
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' id="email" required />
+                        </div>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
+                                Expiration Date
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' id="email" required />
+                        </div>
                     </div>
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="manufacturerName">
-                            Manufacturer Name
-                        </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="manufacturerName" type="text" placeholder="Enter Manufacturer Name" />
+
+                    <p className='text-sm font-Cabin mb-1 text-white opacity-50'>Manufacture Details</p>
+                    <hr className='w-full' />
+
+                    <div className='grid grid-cols-2 place-items-center'>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productName">
+                                Manufacturing Name
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Manufacture Name' required />
+                        </div>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
+                                Contact
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='Contact' id="email" required />
+                        </div>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productName">
+                                Registration Number
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='xxxxxx' required />
+                        </div>
                     </div>
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="date">
-                            Manufacturing Date
-                        </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date" />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">
-                            Description
-                        </label>
-                        <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" placeholder="Enter Description" rows="3"></textarea>
+
+                    <p className='text-sm font-Cabin mb-1 text-white opacity-50'>Regulatory Information</p>
+                    <hr className='w-full' />
+
+                    <div className='grid grid-cols-2 place-items-center'>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productName">
+                                Manufacturing Name
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Manufacture Name' required />
+                        </div>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
+                                Contact
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='Contact' id="email" required />
+                        </div>
+                        <div className="mb-4 w-[450px]">
+                            <label className="block text-white text-lg font-Cabin" htmlFor="productName">
+                                Registration Number
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='xxxxxx' required />
+                        </div>
                     </div>
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">
