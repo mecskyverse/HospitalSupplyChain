@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 // import HeroImage from '../assets/SignUp/HeroImage.png'
 import { FcGoogle } from "react-icons/fc";
 import { FaLink } from "react-icons/fa";
 import { NavLink, Link } from 'react-router-dom';
-
+import metamaskicon from '../assets/SignUp/metamaskicon.svg'
+import { ethers } from 'ethers';
+import Web3Modal from "web3modal";
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
 
@@ -13,6 +16,79 @@ function SignUp() {
     const [role, setRole] = useState('');
     const [termsAndConditions, setTermsAndConditions] = useState(false);
     const [signIn, setSignIn] = useState(false);
+    const [ethersProvider, setEthersProvider] = useState(null);
+    const [account, setAccount] = useState(null);
+    const [walletConnected, setWalletConnected] = useState(false);
+
+    const url = "https://public-en-baobab.klaytn.net";
+    const provider = new ethers.JsonRpcProvider(url)
+    const navigate = useNavigate();
+
+    const privKey = "0x388c8ad3d141ae7eac513a70510075137fec1cc3f3962b9b8cdd3791dd21c761"
+
+
+    const web3ModalRef = useRef();
+
+    const getProviderOrSigner = async (needSigner = false) => {
+        // Connect to Metamask
+        // Since we store `web3Modal` as a reference, we need to access the `current` value to get access to the underlying object
+        const provider = await web3ModalRef.current.connect();
+        const signer = new ethers.Wallet(privKey, provider)
+
+        // If user is not connected to the Sepolia network, let them know and throw an error
+        // const { chainId } = await web3Provider.getNetwork();
+        // if (chainId !== 11155111) {
+        //   window.alert("Change the network to Sepolia");
+        //   throw new Error("Change network to Sepolia");
+        // }
+
+        console.log('signer', signer)
+        return signer;
+    };
+
+    const connectWallet = async () => {
+        try {
+            // Get the provider from web3Modal, which in our case is MetaMask
+            // When used for the first time, it prompts the user to connect their wallet
+            console.log("connect Wallet clicked")
+            await getProviderOrSigner();
+            setWalletConnected(!walletConnected)
+        } catch (err) {
+            console.error(err);
+        }
+    };
+    useEffect(() => {
+        if (typeof window.ethereum == 'undefined') {
+            window.alert("Install Metask to smoothly use this app");
+            // throw new Error("Install Metask to smoothly use this app");
+        }
+
+    }, [])
+
+
+    useEffect(() => {
+        // if wallet is not connected, create a new instance of Web3Modal and connect the MetaMask wallet
+
+        // Assign the Web3Modal class to the reference object by setting it's `current` value
+        // The `current` value is persisted throughout as long as this page is open
+
+        if (!walletConnected) {
+            web3ModalRef.current = new Web3Modal({
+                network: "Klaytn Baobab",
+                providerOptions: {},
+                disableInjectedProvider: false,
+            });
+            connectWallet();
+        }
+        if (walletConnected) {
+            console.log('here');
+            navigate("/overview");
+        }
+
+        console.log(walletConnected)
+    }, [walletConnected]);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,15 +129,15 @@ function SignUp() {
                                         <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin" type="password" placeholder='Confirm Password' id="confirm-password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
                                     </div> */}
                                     <div className="mb-4">
-                                <label className="block text-white text-lg" htmlFor="role">
-                                    Role
-                                </label>
-                                <select className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none font-Cabin text-[#918e96]" id="role" value={role} onChange={(e) => setRole(e.target.value)} required>
-                                    <option value="" disabled="disabled"> Role</option>
-                                    <option value="role1">Role 1</option>
-                                    <option value="role2">Role 2</option>
-                                </select>
-                            </div>
+                                        <label className="block text-white text-lg" htmlFor="role">
+                                            Role
+                                        </label>
+                                        <select className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none font-Cabin text-[#918e96]" id="role" value={role} onChange={(e) => setRole(e.target.value)} required>
+                                            <option value="" disabled="disabled"> Role</option>
+                                            <option value="role1">Role 1</option>
+                                            <option value="role2">Role 2</option>
+                                        </select>
+                                    </div>
                                     {/* <div className="mb-4">
                                         <input className="mr-2 leading-tight" type="checkbox" id="terms-and-conditions" checked={termsAndConditions} onChange={(e) => setTermsAndConditions(e.target.checked)} required />
                                         <label className="text-white opacity-50 text-md mb-2" htmlFor="terms-and-conditions">
@@ -82,7 +158,7 @@ function SignUp() {
                                 </div>
                                 <div className='flex flex-col items-center'>
                                     <button className="bg-[#221c2d] w-[250px] h-[50px] rounded-xl text-white flex justify-center items-center gap-1 mt-2 ">
-                                        <span className='text-2xl'><FcGoogle /></span> <p>Sign In With Google</p>
+                                        <span className='text-2xl'><FcGoogle /></span> <p>Sign In With Metamask</p>
                                     </button>
 
                                     {/* <p className='text-sm text-[#8a8a8a] mt-2'>Already have an account? <span className='text-[#7743DB]'>Login</span></p> */}
@@ -146,8 +222,8 @@ function SignUp() {
                                 <hr className='w-full mt-3' />
                             </div>
                             <div className='flex flex-col items-center'>
-                                <button className="bg-[#221c2d] w-[250px] h-[50px] rounded-xl text-white flex justify-center items-center gap-1 mt-2 ">
-                                    <span className='text-2xl'><FcGoogle /></span> <p>Sign In With Google</p>
+                                <button onClick={() => connectWallet()} className="bg-[#221c2d] w-[250px] h-[50px] rounded-xl text-white flex justify-center items-center gap-1 mt-2 ">
+                                    <span className='text-2xl' ><img src={metamaskicon} className=' w-9 ' alt="" srcset="" /></span> <p>Sign In With Metamask</p>
                                 </button>
 
                                 <p className='text-sm text-[#8a8a8a] mt-2'>Already have an account? <span className='text-[#7743DB]'>Login</span></p>
