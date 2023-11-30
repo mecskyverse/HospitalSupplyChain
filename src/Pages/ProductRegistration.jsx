@@ -1,12 +1,16 @@
 import React from 'react';
 import SearchField from '../components/SearchField';
+import { toast } from 'react-toastify';
 
 const ProductRegistration = () => {
+    const handleSubmit = () => {
+        toast.success("Successfully Registered!!")
+    }
     return (
         <div>
             <SearchField />
             <h1 className='text-3xl text-white font-Cabin pl-10 pt-6'>Product Registration</h1>
-            <form action="" className='p-10'>
+            <form onSubmit={handleSubmit} className='p-10'>
                 <p className='text-sm font-Cabin mb-1 text-white opacity-50'>General details</p>
                 <hr className='w-full' />
                 <div className=" shadow-md rounded">
@@ -15,13 +19,13 @@ const ProductRegistration = () => {
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
                                 Product Name
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Product Name' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Product Name' required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
                                 Product Description
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Description' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Description' required />
                         </div>
 
 
@@ -29,7 +33,7 @@ const ProductRegistration = () => {
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
                                 Batch Number/Serial Number
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Product Name' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Product Name' required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg" htmlFor="role">
@@ -47,13 +51,13 @@ const ProductRegistration = () => {
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
                                 Manufacturing Date
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
                                 Expiration Date
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' required />
                         </div>
                     </div>
 
@@ -71,7 +75,7 @@ const ProductRegistration = () => {
                             <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
                                 Contact
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='Contact' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='Contact' required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
@@ -87,40 +91,36 @@ const ProductRegistration = () => {
                     <div className='grid grid-cols-2 place-items-center'>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
-                                Manufacturing Name
+                                Approval And Cerifications
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Manufacture Name' required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Approval And Cerifications' required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
-                                Contact
+                                Regulatory Authority
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='Contact' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Regulatory Authority' required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
-                                Registration Number
+                                Approval Date
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='xxxxxx' required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="date" placeholder='dd/mm/yyyy' required />
                         </div>
-                    </div>
-                    {/* <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">
-                            Contact
-                        </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact" type="text" placeholder="Enter Contact" />
-                    </div> */}
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="docUpload">
-                            Upload Documents
-                        </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="docUpload" type="file" />
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        <div className="mb-4  w-[450px]">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="docUpload">
+                                Upload Document Proof
+                            </label>
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " id="docUpload" type="file" />
+                        </div>
+
+                        <button className="bg-blue-500 place-self-center col-span-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
                             Submit
                         </button>
+
                     </div>
+
+
                 </div>
             </form>
         </div>
