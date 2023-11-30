@@ -11,6 +11,7 @@ function Dashboard() {
   return (
     <div className=''>
       <SearchField />
+      <h1 className='text-4xl text-white text-center mt-3 '>Analytics</h1>
       <div className='p-5 flex justify-center flex-col items-center'>
         <div className='flex gap-5'>{Dailydata.map((data, index) => {
           return (

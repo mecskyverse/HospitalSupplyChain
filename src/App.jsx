@@ -11,6 +11,7 @@ import TransactionManagement from './Pages/TransactionManagement'
 import RegulatoryCompliance from './Pages/RegulatoryCompliance'
 import UserManagement from './Pages/UserManagement'
 import ProductVerification from './Pages/ProductVerification'
+import ProductVerified from './Pages/ProductVerified'
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <>
@@ -23,7 +24,9 @@ function App() {
         <Route path='regulatoryCompliance' element={<RegulatoryCompliance />} />
         <Route path='userManagement' element={<UserManagement />} />
         <Route path='productRegistration' element={<ProductRegistration />} />
-        <Route path='productVerification' element={<ProductVerification />} />
+        <Route path='productVerification' element={<ProductVerification />} >
+          <Route path=':id' element={<SignUp />} />
+        </Route>
       </Route>
     </>
   ))
