@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './Pages/SignUp'
 import Dashboard from './Pages/Dashboard'
 import Layout from './components/Layout'
@@ -24,9 +25,8 @@ function App() {
         <Route path='regulatoryCompliance' element={<RegulatoryCompliance />} />
         <Route path='userManagement' element={<UserManagement />} />
         <Route path='productRegistration' element={<ProductRegistration />} />
-        <Route path='productVerification' element={<ProductVerification />} >
-          <Route path=':id' element={<SignUp />} />
-        </Route>
+        <Route path='productVerification' element={<ProductVerification />} />
+        <Route path='productVerification/:id' element={<ProductVerified />} />
       </Route>
     </>
   ))
@@ -34,7 +34,10 @@ function App() {
   return (
     <div>
       <RouterProvider router={router} />
-      <ToastContainer />
+      <ToastContainer
+      // pauseOnFocusLoss
+      // theme="dark"
+      />
     </div>
   )
 }

@@ -15,13 +15,13 @@ const ProductRegistration = () => {
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
                                 Product Name
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Enter Product Name' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Product Name' id="email" required />
                         </div>
                         <div className="mb-4 w-[450px]">
                             <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
                                 Product Description
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Description' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Description' id="email" required />
                         </div>
 
 
@@ -29,13 +29,17 @@ const ProductRegistration = () => {
                             <label className="block text-white text-lg font-Cabin" htmlFor="productName">
                                 Batch Number/Serial Number
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Enter Product Name' id="email" required />
+                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="text" placeholder='Enter Product Name' id="email" required />
                         </div>
                         <div className="mb-4 w-[450px]">
-                            <label className="block text-white text-lg font-Cabin" htmlFor="productDescription">
-                                Product Description
+                            <label className="block text-white text-lg" htmlFor="role">
+                                Product Category
                             </label>
-                            <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="email" placeholder='Description' id="email" required />
+                            <select className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none font-Cabin text-[#918e96]" required>
+                                <option value="" >Product Category</option>
+                                <option value="role1">Medicine</option>
+                                <option value="role2">Syrup</option>
+                            </select>
                         </div>
 
 
@@ -100,12 +104,12 @@ const ProductRegistration = () => {
                             <input className="border border-[#221c2d] rounded-xl w-full h-14 py-2 px-3 bg-[#221c2d] focus:border-blue-500 outline-none placeholder:text-white placeholder:opacity-50 font-Cabin " type="number" placeholder='xxxxxx' required />
                         </div>
                     </div>
-                    <div className="mb-4">
+                    {/* <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">
                             Contact
                         </label>
                         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact" type="text" placeholder="Enter Contact" />
-                    </div>
+                    </div> */}
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="docUpload">
                             Upload Documents

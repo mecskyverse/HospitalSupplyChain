@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
 import SearchField from '../components/SearchField'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
+
 function ProductVerification() {
     const [productNumber, setProductNumber] = useState(0);
     const navigate = useNavigate();
     const handleSubmit = () => {
+
         navigate(`/overview/productVerification/${productNumber}`)
+
     }
 
+    const handleClick = () => {
+        // toast.success('Product is already verified!')
+        // console.log("Clicked!!")
+    }
 
     return (
         <div>
@@ -51,11 +59,10 @@ function ProductVerification() {
                             </select>
                         </div>
 
-                        <button className="col-span-2 mt-4 w-[450px] border border-[#7b65c4] rounded-xl h-14 py-2 px-3 bg-[#7b65c4] focus:border-blue-500 outline-none font-Cabin text-white text-lg" >
+                        <Link to={`${productNumber}`}><button onClick={handleClick} className="col-span-2 mt-4 w-[450px] border border-[#7b65c4] rounded-xl h-14 py-2 px-3 bg-[#7b65c4] focus:border-blue-500 outline-none font-Cabin text-white text-lg" >
                             Check Authentication
                         </button>
-
-
+                        </Link>
                     </div>
                 </div >
             </form >
