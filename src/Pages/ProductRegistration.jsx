@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchField from '../components/SearchField';
 import { toast } from 'react-toastify';
 
 const ProductRegistration = () => {
-    const handleSubmit = () => {
+    const [submit, setSubmission] = useState(false);
+    const handleSubmit = (event) => {
+        event.preventDefault();
         toast.success("Successfully Registered!!")
+        
     }
+
     return (
         <div>
             <SearchField />
