@@ -9,7 +9,7 @@ import SpendingStatistics from '../components/Widgets/SpendingStatistics.jsx'
 function Dashboard() {
   const Dailydata = ['Visitors', 'Customers', 'Orders', 'Shipment']
   return (
-    <div className=''>
+    <div>
       <SearchField />
       <h1 className='text-4xl text-white text-center mt-3 '>Analytics</h1>
       <div className='p-5 flex justify-center flex-col items-center'>
