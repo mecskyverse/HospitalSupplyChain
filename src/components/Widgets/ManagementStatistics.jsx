@@ -30,8 +30,6 @@ const AccumulationDoughnut = () => {
 
 
 function ManagementStatistics({ inventoryData, index }) {
-    // console.log(inventoryData.icon)
-    // console.log(index)
     return (
 
         <div className='w-[400px] h-[150px] bg-[#342f45] rounded-2xl p-2 flex flex-col overflow-hidden relative'>
