@@ -47,3 +47,10 @@
   font-weight: 500;
   margin-left: 5px;
 }
+
+td {
+  border: 1px solid #505050;
+  background-color: #505050;
+  border-radius: 10px;
+  color: white;
+}
