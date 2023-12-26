@@ -7,7 +7,8 @@ import group5 from '../assets/Dashboard/group5.svg'
 import IncomeState from '../components/Widgets/IncomeState.jsx'
 import SpendingStatistics from '../components/Widgets/SpendingStatistics.jsx'
 function Dashboard() {
-  const Dailydata = ['Visitors', 'Customers', 'Orders', 'Shipment']
+  const Dailydata = ['Daily Visitors', 'Daily Customers', 'Daily Orders', 'Daily Shipment']
+  const dailyValues = ['721,882', '22,370', '10.608', '50.839']
   return (
     <div>
       <SearchField />
@@ -15,7 +16,7 @@ function Dashboard() {
       <div className='p-5 flex justify-center flex-col items-center'>
         <div className='flex gap-5'>{Dailydata.map((data, index) => {
           return (
-            <DailyOverview currData={data} index={index} />
+            <DailyOverview currData={data} index={index} dailyValues={dailyValues}/>
           )
         })}
         </div>
