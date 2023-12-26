@@ -9,7 +9,8 @@ import MedicineDisplay from '../components/MedicineDisplay.jsx';
 import medicineData from '../assets/medicineData.js';
 
 function InventoryManagement() {
-    const Dailydata = ['Visitors', 'Customers', 'Orders', 'Shipment']
+    const Dailydata = ['Daily Visitors', 'Daily Customers', 'Daily Orders', 'Daily Shipment']
+    const dailyValues = ['721,882', '22,370', '10.608', '50.839']
     const inventoryData = [
         {
             title: 'Total Number of Products',
@@ -35,7 +36,7 @@ function InventoryManagement() {
             <div className='p-5 flex justify-center flex-col items-center'>
                 <div className='flex gap-5'>{Dailydata.map((data, index) => {
                     return (
-                        <DailyOverview key={index} currData={data} index={index} />
+                        <DailyOverview key={index} currData={data} index={index} dailyValues={dailyValues} />
                     )
                 })}
                 </div>
@@ -52,9 +53,9 @@ function InventoryManagement() {
                     <span className='text-2xl  flex '>All Products | <CiSearch className='text-3xl hover:text-gray-500' /></span>
                     <hr className='w-[900px] mb-4' />
                     <div className='grid grid-cols-3 gap-y-2'>
-                    {medicineData.map((data, index) => {
-                        return(<MedicineDisplay data={data} />)
-                    })}
+                        {medicineData.map((data, index) => {
+                            return (<MedicineDisplay data={data} />)
+                        })}
                     </div>
 
                 </div>
