@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         Monteserrat:['Montserrat', 'sans'],
         Cabin: ['Cabin', 'sans'],
+        Sserif: ['Source Serif 4', 'sans']
       }
     },
   },
