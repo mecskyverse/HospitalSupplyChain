@@ -6,7 +6,7 @@ import { useState } from 'react';
 function TrackingBar({ currentMilestone }) {
 
     return (
-        <div className='w-2/3 h-2 rounded-full bg-white mt-10 relative flex justify-between items-start tracking__bar'>
+        <div className='w-3/4 h-2 rounded-full bg-white mt-10 relative flex justify-between items-start tracking__bar'>
             <span className='absolute bg-teal-700 h-2 w-2/6 rounded-full'>
                 <span class="absolute inline-flex rounded-full h-2 w-2 bg-sky-500 right-0"></span>
                 <span className='animate-ping inline-flex bg-blue-500 h-6 w-6 -top-2 rounded-full  absolute -right-2'></span>
