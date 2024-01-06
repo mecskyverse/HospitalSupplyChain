@@ -11,7 +11,7 @@ import vector6 from '../assets/Dashboard/vector6.svg'
 import vector7 from '../assets/Dashboard/vector7.svg'
 import vector8 from '../assets/Dashboard/vector8.svg'
 function Navbar() {
-  const navItems = [vector1, vector2, vector3, vector4, vector5, vector6, vector7, vector8]
+  const navItems = [vector1, vector2, vector3, vector4, vector5, vector7, vector8]
   const mouseOverText = ['Analytics', 'Supply Chain Track', 'Inventory Management', 'Transaction Management', 'Regulatory Compliance', 'User Management', 'Product Registration', 'Product Verification']
   const activeStyle = {
     backgroundColor: 'grey',
@@ -22,7 +22,7 @@ function Navbar() {
     justifyContent: 'center'
     // backdropFilter: 'blur(8px)'
   }
-  const routes = ['', 'supplyChainTrack', 'inventoryManagement', 'transactionManagement', 'regulatoryCompliance', 'userManagement', 'productRegistration', 'productVerification']
+  const routes = ['', 'supplyChainTrack', 'inventoryManagement', 'transactionManagement', 'regulatoryCompliance', 'productRegistration', 'productVerification']
   return (
     <div className='h-screen bg-[#7743DB] w-[5vw] sticky top-0'>
       <nav className='flex flex-col h-full gap-8 relative pt-24 items-center'>
